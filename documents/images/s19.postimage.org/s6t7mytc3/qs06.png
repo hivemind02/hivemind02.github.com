@@ -1,0 +1,12 @@
+<HTML><HEAD><SCRIPT LANGUAGE="JavaScript">
+function countdown(idx){
+window.status="GuardZone";
+top.location="http://dlppolicy.kt.com/guardzone/contents/welcome";
+}
+</SCRIPT><meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+u<CENTER><H1>&nbsp;</H1><H1>&nbsp;</H1><H1>&nbsp;</H1>
+<H1><font face="Arial">접속을 제한합니다</font></H1>
+<p><font face="Arial, Arial" size="3">잠시 후에 이동합니다</font></p>
+<SCRIPT LANGUAGE="JavaScript">setTimeout("countdown(0)",800);</SCRIPT>
+</BODY></HTML>
