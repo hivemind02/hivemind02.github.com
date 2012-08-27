@@ -1,0 +1,10 @@
+config({
+  classname : 'hotnews.MainController',
+  require 	: '/main.js',
+  version 	: '0.1',
+  title 	: 'HotNews',
+  vendor	: 'Team X',
+  theme		: 'ios',
+  icon 		: '/icon.png',
+  loglevel	  : 1,
+});
