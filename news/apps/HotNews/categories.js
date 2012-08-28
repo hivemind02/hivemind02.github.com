@@ -9,18 +9,27 @@ $class('hotnews.Categories').extend(tau.ui.SceneController).define({
       id: 'top',
       title: 'Top Stories',
       url: 'http://mobileblog.olleh.com/rss',
+      layout: 'list_img',
+    }, {
+      id: 'design',
+      title: 'Design',
+      url: 'http://dribbble.com/shots/popular.rss',
+      layout: 'gallery',
     }, {
       id: 'web',
       title: 'Web',
       url: 'http://feeds.feedburner.com/devparan',
+      layout: 'newsify',
     }, {
       id: 'java',
       title: 'Java',
       url: 'http://www.okjsp.pe.kr/rss/okjsp-rss2.jsp?bbs=bbs6',
+      layout: 'list_desc',
     }, {
       id: 'eclipse',
       title: 'Eclipse',
       url: 'http://cafe.rss.naver.com/eclipseplugin',
+      layout: 'list',
     }];
   },
 
