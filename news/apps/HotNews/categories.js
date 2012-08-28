@@ -10,7 +10,37 @@ $class('hotnews.Categories').extend(tau.ui.SceneController).define({
       title: 'Top Stories',
       url: 'http://mobileblog.olleh.com/rss',
       layout: 'list_img',
-    }, {
+    },
+    {
+      id: 'ffff',
+      title: 'FFFFoud',
+      url: 'http://feeds.feedburner.com/ffffound/everyone',
+      layout: 'gallery',
+    },
+    {
+      id: 'dyt',
+      title: 'Design You Trust',
+      url: 'http://designyoutrust.com/feed/',
+      layout: 'gallery',
+    },
+    {
+      id: 'fubiz',
+      title: 'Fubiz',
+      url: 'http://feeds.feedburner.com/fubiz',
+      layout: 'gallery',
+    },
+    {
+      id: 'wishlist',
+      title: 'Wishlist',
+      url: 'http://wishlist.soup.io/rss',
+      layout: 'gallery',
+    },{
+      id: 'mmm',
+      title: 'Modern Metropolis',
+      url: 'http://www.mymodernmet.com/profiles/blog/feed?promoted=1&xn_auth=no',
+      layout: 'gallery',
+    },
+    {
       id: 'design',
       title: 'Design',
       url: 'http://dribbble.com/shots/popular.rss',
