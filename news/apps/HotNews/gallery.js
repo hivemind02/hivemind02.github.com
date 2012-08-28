@@ -17,7 +17,7 @@ $class('hotnews.Gallery')
         this.layout = category.layout;
         this.feed;
         this.scrollPanel;
-        if (this.layout == 'list' || this.layout == 'list_desc'
+        if (this.layout == 'list' || this.layout == 'list_detail'
             || this.layout == 'list_img') {
           this.sizeVals = ['100%'];
         } else {
@@ -33,7 +33,7 @@ $class('hotnews.Gallery')
         this.scrollPanel = new tau.ui.ScrollPanel({
           styles: {
             fontSize: '15px',
-            padding: '10px',
+           // padding: '10px',
           }
         });
         this.getScene().add(this.scrollPanel);
@@ -88,17 +88,22 @@ $class('hotnews.Gallery')
         var article = this.data[index];
         var panelStyle = {
           width: sizeVal,
-          height: '120px',
+          height: '150px',
           float: 'left',
+          paddingLeft: '10px',
           borderBottom: '1px solid #BFBFBD',
+          display: '-webkit-box',
+          '-webkit-box-orient':'horizontal',
+          '-webkit-box-align': (this.layout != 'list' && this.layout != 'list_detail') ? 'center' : 'start',
         };
-        if (this.layout == 'list_img') {
-          panelStyle.height = '170px';
-        }
         if (this.layout == 'list') {
-          panelStyle.height = '50px';
+          panelStyle.height = '45px';
+        }
+        if (this.layout == 'list_detail') {
+          panelStyle.height = '90px';
         }
         if (this.layout == 'gallery') {
+          panelStyle.paddingLeft = '0px';
           var imgSrc = this.getImgSrc(article);
           if (imgSrc) {
             panelStyle.backgroundImage = 'url("' + imgSrc + '")';
@@ -113,18 +118,43 @@ $class('hotnews.Gallery')
         var panel = new tau.ui.Panel({
           styles: panelStyle,
         });
-
+        
+        if (this.layout == 'list_img') {
+          var imgSrc = this.getImgSrc(article);
+          if (imgSrc) {
+            var imageView = new tau.ui.ImageView({
+              src: imgSrc,
+              styles: {
+                width: '96px',
+                marginRight: '10px',
+                '-webkit-border-radius' : '5px',
+              }
+            });
+            imageView.dArticleIndex = index;
+            panel.add(imageView);
+          }
+        }
+        var panel2Styles = {
+            '-webkit-box-flex' : '1',
+          };
+        if(this.layout != 'list' && this.layout != 'list_detail') {
+          panel2Styles.paddingRight = '3px';
+        }
+        var panel2 = new tau.ui.Panel({
+          styles: panel2Styles,
+        });
+        panel.add(panel2);
         var title = new tau.ui.Label({
           text: article.title,
           styles: {
             display: 'block',
             fontWeight: 'bold',
-            fontSize: '105%',
-            marginTop: '10px',
+           marginTop: '5px',
             marginBottom: '6px',
           }
         });
-        panel.add(title);
+        
+        panel2.add(title);
         if (this.layout != 'list' && sizeVal != '33.3%') {
           var description = new tau.ui.Label({
             text: article.contentSnippet.replace(/(\r\n|\n|\r)/gm, ""),
@@ -134,23 +164,9 @@ $class('hotnews.Gallery')
               overflow: 'visible',
             }
           });
-          panel.add(description);
+          panel2.add(description);
         }
-        if (this.layout == 'list_img') {
-          var imgSrc = this.getImgSrc(article);
-          if (imgSrc) {
-            var imageView = new tau.ui.ImageView({
-              src: imgSrc,
-              styles: {
-                // width: '100%',
-                maxWidth: '100%',
-                maxHeight: '50px',
-              }
-            });
-            imageView.dArticleIndex = index;
-            panel.add(imageView);
-          }
-        }
+        
 
         panel.onEvent('tap', this.articleSelected, this);
         panel.dArticleIndex = index;

@@ -24,7 +24,7 @@ $class('hotnews.Categories').extend(tau.ui.SceneController).define({
       id: 'java',
       title: 'Java',
       url: 'http://www.okjsp.pe.kr/rss/okjsp-rss2.jsp?bbs=bbs6',
-      layout: 'list_desc',
+      layout: 'list_detail',
     }, {
       id: 'eclipse',
       title: 'Eclipse',
