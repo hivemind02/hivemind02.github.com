@@ -4,7 +4,7 @@ config({
   version 	: '0.1',
   title 	: 'HotNews',
   vendor	: 'Team X',
-  theme		: 'ios',
+  theme		: 'default',
   icon 		: '/icon.png',
   loglevel	  : 1,
 });
