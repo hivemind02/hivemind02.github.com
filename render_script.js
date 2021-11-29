@@ -1,6 +1,4 @@
-  
-
- let json_a = {
+let json_a = {
     renderList: [
       {
         type: "column",
@@ -26,9 +24,9 @@
         ]
       }
     ]
-  }
+  };
 
-   let json_b = {
+let json_b = {
     renderList: [
       {
         type: "column",
@@ -54,21 +52,21 @@
         ]
       }
     ]
-  }
+  };
     
-    var state = 'state_a'
+    var state = 'state_a';
     function render() {
-        let json
+        let json;
         if (state === 'state_a')
-            json = json_a
+            json = json_a;
         else
-            json = json_b
-        return JSON.stringify(json)
+            json = json_b;
+        return JSON.stringify(json);
     }
     function action(event) {
         if (event === 'click') 
-            state = 'state_b'
+            state = 'state_b';
         else
-            state = 'state_a' 
-        return render()
+            state = 'state_a';
+        return render();
     }
