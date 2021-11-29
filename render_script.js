@@ -1,57 +1,7 @@
 let json_a = {
-    renderList: [
-      {
-        type: "column",
-        children: [
-          {
-            type: "text",
-            text: "Hello"
-          },
-          {
-            type: "row",
-            children: [
-              {
-                type: "text",
-                text: "<font color='blue'>Jetpack</font> Compose!"
-              }
-            ]
-          },
-          {
-            type: "button",
-            text: "Button",
-            action: "click"
-          }
-        ]
-      }
-    ]
   };
 
 let json_b = {
-    renderList: [
-      {
-        type: "column",
-        children: [
-          {
-            type: "text",
-            text: "안녕"
-          },
-          {
-            type: "row",
-            children: [
-              {
-                type: "text",
-                text: "<font color='red'>제트팩</font> 컴포즈!"
-              }
-            ]
-          },
-          {
-            type: "button",
-            text: "Button",
-            action: "default"
-          }
-        ]
-      }
-    ]
   };
     
     var state = 'state_a';
