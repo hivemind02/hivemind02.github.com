@@ -55,6 +55,7 @@ let json_b = {
 }
 
 var state = 'state_a'
+
 function render() {
     let json
     if (state === 'state_a')
@@ -63,6 +64,7 @@ function render() {
         json = json_b
     return JSON.stringify(json)
 }
+
 function action(event) {
     if (event === 'click')
         state = 'state_b'
