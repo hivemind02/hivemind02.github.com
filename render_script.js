@@ -5,7 +5,7 @@ let json_a = {
             children: [
                 {
                     type: "text",
-                    text: "Hello"
+                    text: "Hello111"
                 },
                 {
                     type: "row",
@@ -33,7 +33,7 @@ let json_b = {
             children: [
                 {
                     type: "text",
-                    text: "안녕"
+                    text: "안녕AAA"
                 },
                 {
                     type: "row",
